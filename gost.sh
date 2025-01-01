@@ -96,7 +96,8 @@ function Install_ct() {
   read -e -p "是否使用？[y/n]:" addyn
   [[ -z ${addyn} ]] && addyn="n"
   if [[ ${addyn} == [Yy] ]]; then
-    rm -rf gost_"$ct_new_ver"_linux_"$bit".tar.gz
+    rm -rf gost_"$ct_new_ver"_linux_"$bit"-.tar.gz
+    rm -rf gost_"$ct_new_ver"_linux_"$bit"-.tar
     wget --no-check-certificate https://cf.ghproxy.cc/https://github.com/ginuerzh/gost/releases/download/v"$ct_new_ver"/gost_"$ct_new_ver"_linux_"$bit".tar.gz
     gunzip gost_"$ct_new_ver"_linux_"$bit".tar.gz
     gunzip gost_"$ct_new_ver"_linux_"$bit".tar
@@ -105,7 +106,8 @@ function Install_ct() {
     wget --no-check-certificate https://cf.ghproxy.cc/https://raw.githubusercontent.com/cluntop/EZgost/main/gost.service && chmod -R 777 gost.service && mv gost.service /usr/lib/systemd/system
     mkdir /etc/gost && wget --no-check-certificate https://cf.ghproxy.cc/https://raw.githubusercontent.com/cluntop/EZgost/main/config.json && mv config.json /etc/gost && chmod -R 777 /etc/gost
   else
-    rm -rf gost-linux-"$bit"-"$ct_new_ver".gz
+    rm -rf gost_"$ct_new_ver"_linux_"$bit"-.tar.gz
+    rm -rf gost_"$ct_new_ver"_linux_"$bit"-.tar
     wget --no-check-certificate https://github.com/ginuerzh/gost/releases/download/v"$ct_new_ver"/gost_"$ct_new_ver"_linux_"$bit".tar.gz
     gunzip gost_"$ct_new_ver"_linux_"$bit".tar.gz
     gunzip gost_"$ct_new_ver"_linux_"$bit".tar
