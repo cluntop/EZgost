@@ -99,7 +99,7 @@ function Install_ct() {
     rm -rf gost_"$ct_new_ver"_linux_"$bit".tar.gz
     wget --no-check-certificate https://cf.ghproxy.cc/https://github.com/ginuerzh/gost/releases/download/v"$ct_new_ver"/gost_"$ct_new_ver"_linux_"$bit".tar.gz
     gunzip gost_"$ct_new_ver"_linux_"$bit".tar.gz
-    mv gost_"$ct_new_ver"_linux_"$bit" gost
+    gunzip gost_"$ct_new_ver"_linux_"$bit".tar
     mv gost /usr/bin/gost
     chmod -R 777 /usr/bin/gost
     wget --no-check-certificate https://cf.ghproxy.cc/https://raw.githubusercontent.com/cluntop/EZgost/main/gost.service && chmod -R 777 gost.service && mv gost.service /usr/lib/systemd/system
@@ -108,7 +108,7 @@ function Install_ct() {
     rm -rf gost-linux-"$bit"-"$ct_new_ver".gz
     wget --no-check-certificate https://github.com/ginuerzh/gost/releases/download/v"$ct_new_ver"/gost_"$ct_new_ver"_linux_"$bit".tar.gz
     gunzip gost_"$ct_new_ver"_linux_"$bit".tar.gz
-    mv gost_"$ct_new_ver"_linux_"$bit" gost
+    gunzip gost_"$ct_new_ver"_linux_"$bit".tar
     mv gost /usr/bin/gost
     chmod -R 777 /usr/bin/gost
     wget --no-check-certificate https://raw.githubusercontent.com/cluntop/EZgost/main/gost.service && chmod -R 777 gost.service && mv gost.service /usr/lib/systemd/system
