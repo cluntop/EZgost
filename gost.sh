@@ -103,6 +103,9 @@ function Install_ct() {
     tar -xvf gost_"$ct_new_ver"_linux_"$bit".tar
     mv gost /usr/bin/gost
     chmod -R 777 /usr/bin/gost
+    rm -rf LICENSE
+    rm -rf README_en.md
+    rm -rf README.md
     wget --no-check-certificate https://cf.ghproxy.cc/https://raw.githubusercontent.com/cluntop/EZgost/main/gost.service && chmod -R 777 gost.service && mv gost.service /usr/lib/systemd/system
     mkdir /etc/gost && wget --no-check-certificate https://cf.ghproxy.cc/https://raw.githubusercontent.com/cluntop/EZgost/main/config.json && mv config.json /etc/gost && chmod -R 777 /etc/gost
   else
@@ -113,6 +116,9 @@ function Install_ct() {
     tar -xvf gost_"$ct_new_ver"_linux_"$bit".tar
     mv gost /usr/bin/gost
     chmod -R 777 /usr/bin/gost
+    rm -rf LICENSE
+    rm -rf README_en.md
+    rm -rf README.md
     wget --no-check-certificate https://raw.githubusercontent.com/cluntop/EZgost/main/gost.service && chmod -R 777 gost.service && mv gost.service /usr/lib/systemd/system
     mkdir /etc/gost && wget --no-check-certificate https://raw.githubusercontent.com/cluntop/EZgost/main/config.json && mv config.json /etc/gost && chmod -R 777 /etc/gost
   fi
